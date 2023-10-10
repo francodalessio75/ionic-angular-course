@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>recipe-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-grid fixed no-padding>
+  <ion-row>
+    <ion-col no-padding>
+      <ion-img [src]="(recipe$|async)?.imageUrl"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h1>{{(recipe$|async)?.title}}</h1>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item *ngFor="let ingredient of (recipe$ | async)?.ingredients">
+          {{ingredient}}
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+ </ion-grid>
+</ion-content>
