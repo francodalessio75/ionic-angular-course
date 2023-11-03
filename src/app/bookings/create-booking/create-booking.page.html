@@ -1,0 +1,9 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ ( selectedPlace$|async )?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <p>{{(selectedPlace$|async)?.description}}</p>
+</ion-content>
